@@ -144,6 +144,7 @@ export class StreamClientScrcpy
         const { udid, player: playerName } = this.params;
         this.startStream({ udid, player, playerName, fitToScreen, videoSettings });
         this.setBodyClass('stream');
+        this.setHandleKeyboardEvents(true);
     }
 
     public static parseParameters(params: URLSearchParams): ParamsStreamScrcpy {
