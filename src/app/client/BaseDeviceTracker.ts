@@ -32,7 +32,7 @@ export abstract class BaseDeviceTracker<DD extends BaseDeviceDescriptor, TE> ext
     public static buildUrl(item: HostItem): URL {
         const { secure, port, hostname } = item;
         const protocol = secure ? 'wss:' : 'ws:';
-        const url = new URL(`${protocol}//${hostname}`);
+        const url = new URL(`${protocol}//${hostname}/ws`);
         if (port) {
             url.port = port.toString();
         }
