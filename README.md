@@ -2,6 +2,9 @@
 
 Web client for [Genymobile/scrcpy][scrcpy] and more.
 
+This is a fork, which supports reverse proxies.
+The path of the websockets was changed to $scheme://$host:$port/ws
+
 ## Requirements
 
 Browser must support the following technologies:
