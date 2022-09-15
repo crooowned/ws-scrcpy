@@ -110,7 +110,7 @@ export abstract class ManagerClient<P extends ParamsBase, TE> extends BaseClient
 
     protected wrapInProxy(directUrl: URL): URL {
         const localProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-        const localUrl = new URL(`${localProtocol}//${location.host}`);
+        const localUrl = new URL(`${localProtocol}//${location.host}/ws`);
         localUrl.searchParams.set('action', ACTION.PROXY_WS);
         localUrl.searchParams.set('ws', directUrl.toString());
         return localUrl;
