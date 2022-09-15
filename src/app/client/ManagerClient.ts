@@ -90,12 +90,12 @@ export abstract class ManagerClient<P extends ParamsBase, TE> extends BaseClient
         let urlString: string;
         if (typeof hostname === 'string' && typeof port === 'number') {
             const protocol = secure ? 'wss:' : 'ws:';
-            urlString = `${protocol}//${hostname}:${port}`;
+            urlString = `${protocol}//${hostname}:${port}/ws`;
         } else {
             const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
 
             // location.host includes hostname and port
-            urlString = `${protocol}${location.host}`;
+            urlString = `${protocol}${location.host}/ws`;
         }
         const directUrl = new URL(urlString);
         if (this.supportMultiplexing()) {
